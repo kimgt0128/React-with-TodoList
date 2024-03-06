@@ -1,0 +1,11 @@
+.todoHeadBox {
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .tasksLeft {
+    position:relative;
+    color:rgb(4, 173, 117);
+    font-size: 18px;
+    margin-top: 90pxx;
+  
+  }

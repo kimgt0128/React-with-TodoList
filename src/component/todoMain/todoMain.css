@@ -1,0 +1,13 @@
+.todoMainBox{
+
+    height: 500px;
+    background-color: rgb(229, 250, 244);
+    padding: 20px 32px;
+    overflow-y: auto;
+  }
+  .todoListBox{
+    height: 400px;
+    border: 2px solid black;
+    overflow-y: scroll;
+  }
+  

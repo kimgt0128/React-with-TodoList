@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import TodoHead from './component/todoHead/todoHead'
+import TodoMain from './component/todoMain/todoMain'
+import TodoCreate from './component/todoCreate/todoCreate'
+import './App.css'
+
+
+
+
+//나중에 캘린더화 함께 pages 폴더로 이동할 에정!
+function TodoTemplet() {
+  return (
+    <div className='todoWrapper'>
+      <TodoHead></TodoHead>
+      <TodoMain></TodoMain>
+      <TodoCreate></TodoCreate>
+    </div>
+  )
+}
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <TodoTemplet></TodoTemplet>
+  )
+  
 }
 
 export default App;
