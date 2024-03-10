@@ -10,4 +10,7 @@
     border: 2px solid black;
     overflow-y: scroll;
   }
-  
+  .todoItemBox {
+    display:flex;
+    flex-direction:row;
+  }

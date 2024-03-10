@@ -1,12 +1,27 @@
-import React from 'react';
-import './todoMain.css'
+import {React, useState} from 'react';
 
-function Task({ id, name, done = true, color }) {
-  return (
-    done ? <div><del style={{ color: color }}>{id}. {name}</del></div> :
-    <div style={{ color: color }}>{id}. {name}</div>
-    );
+import './todoMain.css';
+import {FaRegCircle,  FaRegCheckCircle  } from "react-icons/fa";
+
+
+function TodoItem({ id, name, color }) {
+  let [isDone, setIsDone] = useState(false);
+  const handleCheck = () => {
+    setIsDone(!isDone)
   }
+  return (
+    <div className='todoItemBox'>
+      <div className='iconWrapper' onClick={handleCheck}>
+        {isDone ? (<FaRegCheckCircle className='icons' color='green'/>
+        ) : 
+        (<FaRegCircle className='icon'/>
+        )}
+      </div>
+        {name}
+    </div>
+  );
+}
+
   
   let todolists = [{
     id: 1, //JSX에서 key로 사용됨.
@@ -36,17 +51,19 @@ function Task({ id, name, done = true, color }) {
   function TodoListBox(children) {
     return (
       <div className='todoListBox'>
+
       {todolists.map(todo => (
         
 
         <TodoListBlock>
-          <Task
+
+          <TodoItem
           key={todo.key}
           id={todo.id}
           name={todo.name}
-          done={todo.done}
+          //done={isDone}
           color="green"
-          ></Task>
+          ></TodoItem>
         </TodoListBlock>
         ))}
     </div>
@@ -57,7 +74,6 @@ function TodoMain() {
     return (
       <div className='todoMainBox'>
         <TodoListBox/>
-        {/*TodoCreateBox*/}
       </div>
     )
   }
